@@ -11,17 +11,33 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+// Simon Neubauer
+import { WelcomePage } from  '../pages/welcome/welcome';
+import { SignupPage } from  '../pages/signup/signup';
+import { AngularFireModule } from 'angularfire2';
+import { FIREBASE_CONFIG } from "./app.firebase.config";
+import { AngularFireAuthModule} from 'angularfire2/auth';
+import { AngularFireDatabaseModule, AngularFireDatabase} from 'angularfire2/database';
+import { UserService } from '../services/user.service';
+import { UserComponent } from '../components/user/user';
+import { AuthService } from '../services/auth.service';
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WelcomePage,
+    SignupPage,
+    UserComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +45,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    WelcomePage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireDatabase,
+    AngularFireDatabaseModule,
+    UserService,
+    AuthService
   ]
 })
 export class AppModule {}

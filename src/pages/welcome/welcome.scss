@@ -1,0 +1,32 @@
+page-welcome {
+#welcome{
+    background: color($colors, custom1,custom2);
+    h1{
+        font-size: 26px;
+        margin-top: 26px;
+    }
+    .marginTop{
+        margin-top:150px;
+    }
+    .logo{
+        height: 40px;
+        width: auto;
+        margin: auto;
+        display: block;
+        margin-top: 30px;
+
+    }
+    .signup{
+        background-color: white;
+        color:rgb(255, 0, 85);
+        border-color:rgb(255, 0, 85);
+       
+     
+
+    }
+    .login{
+        margin-top: 5px; 
+        background-color: rgb(255, 0, 85);
+    }
+}
+}

@@ -1,0 +1,28 @@
+<ion-content padding id="welcome">
+<img src="assets/imgs/whisp_logo.png" class ="logo">
+
+<!--<h1>Welcome to Whisp </h1>
+<div>Discover some interesting things</div>-->
+<br>
+<br>
+<ion-list>
+<ion-item>
+        <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" placeholder="Password Input" [(ngModel)]="password"></ion-input>
+</ion-item>
+<button ion-button block class ="login" (click)="login()">Login</button>
+<br>
+Forgot password?
+</ion-list>
+
+<!-- <button ion-button block class="marginTop" (click)="signup()">Sign up</button>
+//<button ion-button block color ="custom2" (click)="login()">Login</button>
+-->
+<br>
+<p>Do not already have an account?</p>
+<button ion-button block outline = "true" class ="signup" (click)="signup()">Sign up</button>
+
+<user></user>
+</ion-content>
